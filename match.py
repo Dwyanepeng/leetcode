@@ -7,7 +7,8 @@
 '''匹配 . 和 * ,分别表示匹配任意一个字符，前一个字符出现任意次数'''
 
 def isMatch(text, pattern) -> bool:
-    if not pattern: return not text
+    if not pattern:
+        return not text
 
     first = bool(text) and pattern[0] in {text[0], '*'}
 
