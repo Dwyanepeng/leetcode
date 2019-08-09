@@ -32,7 +32,7 @@ class Solution(object):
                 s.append(temp.left)
         return lst
 
-class Solution:
+class Solution1:
     def preorderTraversal(self, root):
         # 0 表示当前遍历到它，1 表示压入栈
         # 刚开始是 1 ，不要写成 0 了
