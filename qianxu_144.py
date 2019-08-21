@@ -53,3 +53,13 @@ class Solution1:
                 stack.append((1, node.left))
                 stack.append((0, node))
         return s
+
+#递归
+class Solution1:
+    def inorderTraversal(self, root):
+        res=[]
+        if root:
+            res+=self.inorderTraversal(root.left)
+            res.append(root.val)
+            res+=self.inorderTraversal(root.right)
+        return res

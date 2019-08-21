@@ -11,7 +11,6 @@
 每个数组元素不会超过100。
 阵列大小不会超过200。
 
-
 例1：
 
 输入：[1,5,11,5]
@@ -38,21 +37,21 @@
 class Solution:
     def canPartition(self, nums):
         c = sum(nums)
-        if c & 0x1:
+        if c & 0x1: #为奇数
             return False
         c = c // 2
         w = [False] * (c+1)
         w[0] = True #表示当元素出现的时候让w[i-num]为True,即w[i]为True
+        print(w)
         for num in nums:
             for i in range(c, num-1, -1):
                 w[i] = w[i] or w[i-num]
+                print('i', i, w)
         return w[c]
-
-
-
 
 s = Solution()
 print(s.canPartition([3,3,3,4,5]))
+print(s.canPartition([1,5,11,5]))
 
 
 

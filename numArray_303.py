@@ -22,10 +22,7 @@ class NumArray(object):
     def __init__(self, nums):
         self.nums = nums
     def sumRange(self, i, j):
-        n = len(self.nums)
-        li = list(range(0, n))
-        if i in li and j in li:
-            return self.nums[i]+self.nums[j]
+        return sum(self.nums[i:j+1])
 
 nn = NumArray([-2, 0, 3, -5, 2, -1])
 # nn.__init__()
@@ -42,9 +39,12 @@ class NumArray1(object):
         for n in nums:
             total += n
             self.sums.append(total)
+        # print(self.sums)
 
     def sumRange(self, i, j):
         if i > 0:
             return self.sums[j] - self.sums[i-1]
         else:
             return self.sums[j]
+nn1 = NumArray1([-2, 0, 3, -5, 2, -1])
+print(nn1.sumRange(2,3))

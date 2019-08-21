@@ -38,9 +38,12 @@ class Solution:
         tmp = [[]]
         for pool in chars:
             tmp = [x+[y] for x in tmp for y in pool]
+            print(tmp)
         result = list()
+        print(chars,tmp)
         for prod in tmp:
             result.append(''.join(prod))
+            # result.append(str(prod[0]+prod[1]))
         return result
 
     def letterCombinations1(self, digits):
@@ -51,10 +54,11 @@ class Solution:
                  '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
 
         chars = [l_map.get(d) for d in digits]
+        print(chars)
         return [''.join(x) for x in itertools.product(*chars)]
 
 if __name__ == '__main__':
     digits = input()
     s = Solution()
-    print(s.letterCombinations1(digits))
+    print(s.letterCombinations(digits))
 

@@ -23,3 +23,11 @@ def twoNumber(numbers):
     return [a,b]
 
 print(twoNumber([1,2,4,1,2,6]))
+
+def oneNumber(nums):
+    n = 0
+    for num in nums:
+        n ^= num
+    return n
+
+print(oneNumber([1,1,2,2,3,6,6,7,7]))
