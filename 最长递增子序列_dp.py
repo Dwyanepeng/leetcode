@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/7/31 8:58
 # @Site    : 
-# @File    : dp.py
+# @File    : 最长递增子序列_dp.py
 # @Software: PyCharm
 
 '''最长递增子序列'''

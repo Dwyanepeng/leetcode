@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File  :canPartition_416.py
+# File  :背包问题canPartition_416.py
 # Author: PengLei
 # Date  : 2019/8/10
 

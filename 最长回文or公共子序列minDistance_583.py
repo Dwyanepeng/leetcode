@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/8/12 16:37
 # @Site    : 
-# @File    : minDistance_583.py
+# @File    : 最长回文or公共子序列minDistance_583.py
 # @Software: PyCharm
 '''给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。
 
@@ -40,15 +40,15 @@
 class Solution:
     def minDistance(self, word1, word2):
         m = len(word1)
-        # word2 = word1[::-1]
+        # word2 = word1[::-1] #回文
         n = len(word2)
         dp = [[0] * (n+1) for _ in range(m+1)]
-        for i in range(1, m+1):
-            for j in range(1, n+1):
-                if word1[i-1] == word2[j-1]:
-                    dp[i][j] = dp[i-1][j-1] + 1
+        for i in range(m):
+            for j in range(n):
+                if word1[i] == word2[j]:
+                    dp[i+1][j+1] = dp[i][j] + 1
                 else:
-                    dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+                    dp[i+1][j+1] = max(dp[i][j+1], dp[i+1][j])
         return m + n - 2 * dp[m][n]
         # return int(dp[-1][-1]) #回文
 

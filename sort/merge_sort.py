@@ -16,16 +16,14 @@ def merge_sort(left, right):
     result = []
     i, j = 0, 0
     while i < len(left) and j < len(right):
-        if left[i] < right[j]:
+        if left[i] <= right[j]:
             result.append(left[i])
             i += 1
         else:
             result.append(right[j])
             j += 1
-    if i == len(left)-1:
-        result = result + right[i:]
-    else:
-        result= result + right[j::]
+    result.extend(right[j:])
+    result.extend(left[i:])
     return result
 
-print(merge_sort([1,4,8,55], [2,4,6,7,56,77,88]))
+print(merge_sort([1,4,8,55], [2,4]))

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/8/9 17:06
 # @Site    : 
-# @File    : permutation.py
+# @File    : 全排列permutation.py
 # @Software: PyCharm
 '''数组全排列'''
 
