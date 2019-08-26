@@ -15,10 +15,11 @@ def topKFrequence(nums, K):
             map[num] += 1
         else:
             map[num] = 1
-    # print(map)
+    print(map)
     if len(map) <= K:
         return list(map.keys())
     res = sorted(map.items(),key=lambda x:x[1], reverse=True)
+    print(res)
     return [x[0] for x in res[0:K]]
 
 print(topKFrequence(nums, K))

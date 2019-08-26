@@ -20,7 +20,6 @@ def quick_sort(nums, start, end):
             low += 1
         nums[high] = nums[low]
         nums[low] = piv
-
     quick_sort(nums, start, low-1)
     quick_sort(nums, low+1, end)
 
