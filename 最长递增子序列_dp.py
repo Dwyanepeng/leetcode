@@ -18,7 +18,7 @@ class Solution:
                     dp[i] = max(dp[i], dp[j]+1)
                 j += 1
             i += 1
-        return max(dp)
+        return dp
 
 s = Solution()
 print(s.lengthofLIS([10,9,2,5,3,7,101,18]))

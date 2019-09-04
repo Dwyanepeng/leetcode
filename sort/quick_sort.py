@@ -20,6 +20,7 @@ def quick_sort(nums, start, end):
             low += 1
         nums[high] = nums[low]
         nums[low] = piv
+    # print(nums)
     quick_sort(nums, start, low-1)
     quick_sort(nums, low+1, end)
 
@@ -37,3 +38,31 @@ def quick_sort1(nums):
 
 print(quick_sort([54,26,93,15,77,3,44,55,20], 0, 8))
 print(quick_sort1([54,26,93,15,77,3,44,55,20]))
+
+
+#O(n)解TopK问题
+def quick_sort(nums, start, end, k):
+    if start >= end:
+        return None
+    low = start
+    high = end
+    piv = nums[start]
+    while low < high:
+        while low < high and nums[high] >= piv:
+            high -= 1
+        nums[low] = nums[high]
+
+        while low < high and nums[low] < piv:
+            low += 1
+        nums[high] = nums[low]
+        nums[low] = piv
+    # print(nums)
+    print('low', low)
+    if len(nums) - low < k:
+        quick_sort(nums, start, low-1, k-(len(nums)-low))
+    elif len(nums) - low > k:
+        quick_sort(nums, low+1, end, k)
+    else:
+        return nums[nums.index(piv):]
+    # return nums
+print(quick_sort([54,26,93,15,77,3,44,55,20], 0, 8, 3))

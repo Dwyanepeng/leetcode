@@ -19,6 +19,8 @@ def topKFrequence(nums, K):
     if len(map) <= K:
         return list(map.keys())
     res = sorted(map.items(),key=lambda x:x[1], reverse=True)
+    # m = dict([value,key] for key,value in map.items())
+    # print('m', sorted(m))
     print(res)
     return [x[0] for x in res[0:K]]
 
@@ -27,4 +29,4 @@ print(topKFrequence(nums, K))
 
 
 from collections import Counter
-print(sorted(Counter(nums).items(), key=lambda x:x[1], reverse=True))
+# print(sorted(Counter(nums).items(), key=lambda x:x[1], reverse=True))

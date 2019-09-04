@@ -18,10 +18,12 @@ class Solution:
                 dic[num] = 1
         dic = sorted(dic.items(), key=lambda d:d[1], reverse=True)
         # list = [v for v in sorted(dic.values())]
-        list = []
-        for i in range(k):
-            list.append(dic[i][0])
-        return list
+        # list = []
+        # for i in range(k):
+        #     list.append(dic[i][0])
+        # print(dic)
+        return [i[0] for i in dic[0:k]]
+        # return list(dic[0::k][0])
 
 s = Solution()
-print(s.topKFrequent([4,1,-1,2,-1,2,3], 2))
+print(s.topKFrequent([1,2,2,2,2,3,3,4,4,4], 2))

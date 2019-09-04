@@ -18,8 +18,10 @@ def adjust_heap(lists, i, size):
     if i < size / 2:
         if lchild < size and lists[lchild] > lists[max]:
             max = lchild
+            print('lc', lchild)
         if rchild < size and lists[rchild] > lists[max]:
             max = rchild
+            print()
         if max != i:
             lists[max], lists[i] = lists[i], lists[max]
             adjust_heap(lists, max, size)
@@ -27,6 +29,7 @@ def adjust_heap(lists, i, size):
 # 创建堆
 def build_heap(lists, size):
     for i in range(0, (size // 2))[::-1]:
+        print('i', i)
         adjust_heap(lists, i, size)
 
 # 堆排序
